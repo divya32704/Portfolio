@@ -180,10 +180,11 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
       description: "Award-winning team showcasing AI accessibility technology at the statewide competition.",
     },
   ],
-  wideImage: "/project-dristi.png",
-  wideImageAlt: "Dristi AI Accessibility Project",
-  wideTitle: "Dristi - AI Accessibility Assistant",
-  wideDescription: "AI-powered voice-controlled assistant for visually impaired users. Real-time scene descriptions using vision-language models.",
+  // Removed wide landscape showcase (project spotlight) from experience
+  wideImage: "",
+  wideImageAlt: "",
+  wideTitle: "",
+  wideDescription: "",
 };
 
 // Featured Projects Section
