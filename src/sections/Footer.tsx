@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Instagram, Linkedin, Mail, Github, Send, Download } from 'lucide-react';
+import { Instagram, Linkedin, Mail, Github } from 'lucide-react';
 import { footerConfig } from '../config';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -20,7 +20,6 @@ export function Footer() {
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const shouldRender = !!(
     footerConfig.logoText ||
@@ -67,13 +66,21 @@ export function Footer() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-    }, 1500);
+
+    // Construct a mailto: link using the current form data so users can directly email
+    const to = footerConfig.email || '';
+    const subject = encodeURIComponent(`Website Inquiry from ${formData.name || 'Website Visitor'}`);
+    const bodyLines = [] as string[];
+    if (formData.message) bodyLines.push(formData.message);
+    if (formData.email) bodyLines.push(`\nReply-to: ${formData.email}`);
+    const body = encodeURIComponent(bodyLines.join('\n'));
+
+    const mailto = `mailto:${to}?subject=${subject}&body=${body}`;
+
+    // Open the user's mail client
+    window.location.href = mailto;
+    // Keep a small timeout to reset the submitting state in case the mail client doesn't open
+    setTimeout(() => setIsSubmitting(false), 1000);
   };
 
   return (
@@ -111,68 +118,51 @@ export function Footer() {
                 Send a Message
               </p>
               
-              {submitted ? (
-                <div className="tech-card p-8 rounded-lg text-center">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: 'rgba(183, 255, 58, 0.1)' }}>
-                    <Send className="w-8 h-8" style={{ color: 'var(--neon-lime)' }} />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
-                    Message Sent!
-                  </h3>
-                  <p style={{ color: 'var(--text-secondary)' }}>
-                    Thank you for reaching out. I&apos;ll get back to you soon.
-                  </p>
-                </div>
-              ) : (
-                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:border-[var(--neon-lime)] transition-colors"
-                      style={{ 
-                        borderColor: 'rgba(244, 247, 246, 0.1)',
-                        color: 'var(--text-primary)'
-                      }}
-                    />
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      required
-                      className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:border-[var(--neon-lime)] transition-colors"
-                      style={{ 
-                        borderColor: 'rgba(244, 247, 246, 0.1)',
-                        color: 'var(--text-primary)'
-                      }}
-                    />
-                  </div>
-                  <textarea
-                    placeholder="Your Message"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    required
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:border-[var(--neon-lime)] transition-colors resize-none"
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:border-[var(--neon-lime)] transition-colors"
                     style={{ 
                       borderColor: 'rgba(244, 247, 246, 0.1)',
                       color: 'var(--text-primary)'
                     }}
                   />
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="btn-neon inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? 'Sending...' : 'Start a Conversation'}
-                    <Send className="w-4 h-4" />
-                  </button>
-                </form>
-              )}
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:border-[var(--neon-lime)] transition-colors"
+                    style={{ 
+                      borderColor: 'rgba(244, 247, 246, 0.1)',
+                      color: 'var(--text-primary)'
+                    }}
+                  />
+                </div>
+                <textarea
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:border-[var(--neon-lime)] transition-colors resize-none"
+                  style={{ 
+                    borderColor: 'rgba(244, 247, 246, 0.1)',
+                    color: 'var(--text-primary)'
+                  }}
+                />
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="btn-neon inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Opening email...' : 'Email Me'}
+                  <Mail className="w-4 h-4" />
+                </button>
+              </form>
             </div>
 
             {/* Contact Info & Links */}
@@ -249,19 +239,7 @@ export function Footer() {
                 )}
               </div>
 
-              {/* Resume Download */}
-              <div>
-                <p className="font-mono text-xs tracking-[0.15em] uppercase mb-4" style={{ color: 'var(--neon-lime)' }}>
-                  Resume
-                </p>
-                <a
-                  href="#"
-                  className="btn-outline inline-flex items-center gap-2 text-sm"
-                >
-                  <Download className="w-4 h-4" />
-                  Download CV
-                </a>
-              </div>
+              {/* Resume section removed per request */}
             </div>
           </div>
 
