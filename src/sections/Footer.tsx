@@ -1,14 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Instagram, Twitter, Linkedin, Mail, Github, Send, Download } from 'lucide-react';
+import { Instagram, Linkedin, Mail, Github, Send, Download } from 'lucide-react';
 import { footerConfig } from '../config';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const iconMap: Record<string, React.ElementType> = {
   Instagram,
-  Twitter,
   Linkedin,
   Mail,
   Github,
@@ -23,7 +22,11 @@ export function Footer() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  if (!footerConfig.logoText && !footerConfig.email && footerConfig.navLinks.length === 0) return null;
+  const shouldRender = !!(
+    footerConfig.logoText ||
+    footerConfig.email ||
+    (footerConfig.navLinks && footerConfig.navLinks.length > 0)
+  );
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -58,6 +61,8 @@ export function Footer() {
 
     return () => ctx.revert();
   }, []);
+
+  if (!shouldRender) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

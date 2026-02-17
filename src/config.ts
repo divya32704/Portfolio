@@ -426,7 +426,7 @@ export interface FooterConfig {
 export const footerConfig: FooterConfig = {
   logoText: "DIVYA",
   contactLabel: "Get in Touch",
-  email: "divya.shah@example.com",
+  email: "shahdivya327@gmail.com",
   locationText: "United States",
   navigationLabel: "Navigation",
   navLinks: [
@@ -437,10 +437,9 @@ export const footerConfig: FooterConfig = {
   ],
   socialLabel: "Connect",
   socialLinks: [
-    { iconName: "Linkedin", href: "https://linkedin.com", label: "LinkedIn" },
-    { iconName: "Github", href: "https://github.com", label: "GitHub" },
-    { iconName: "Twitter", href: "https://twitter.com", label: "Twitter" },
-    { iconName: "Mail", href: "mailto:divya.shah@example.com", label: "Email" },
+    { iconName: "Linkedin", href: "https://www.linkedin.com/in/divya-shah27/", label: "LinkedIn" },
+    { iconName: "Github", href: "https://github.com/divya32704", label: "GitHub" },
+    { iconName: "Mail", href: "mailto:shahdivya327@gmail.com", label: "Email" },
   ],
   tagline: "Building intelligent systems\nthat bridge AI research and real-world deployment.",
   copyright: "© 2026 Divya Shah. All rights reserved.",
