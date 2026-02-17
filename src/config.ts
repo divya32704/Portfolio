@@ -147,6 +147,10 @@ export interface WhyChooseMeConfig {
   titleRegular: string;
   titleItalic: string;
   statsLabel: string;
+  // Optional company name to display below the section title (e.g. employer/company)
+  companyName?: string;
+  // Optional date range to display below the company name
+  companyDates?: string;
   stats: StatItem[];
   featureCards: FeatureCard[];
   wideImage: string;
@@ -159,6 +163,8 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
   subtitle: "Experience",
   titleRegular: "Software",
   titleItalic: "Development Intern",
+  companyName: "Quanticore (Edutrend)",
+  companyDates: "Aug 2025 - Dec 2025",
   statsLabel: "By The Numbers",
   stats: [
     { value: 30, suffix: "%", label: "Page Load Improvement" },

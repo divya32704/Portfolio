@@ -253,6 +253,17 @@ export function WhyChooseMe() {
               {whyChooseMeConfig.titleItalic}
             </span>
           </h2>
+          {/* Optional company and date lines shown beneath the section title */}
+          {whyChooseMeConfig.companyName && (
+            <p className="mt-3 text-base" style={{ color: 'var(--text-secondary)' }}>
+              {whyChooseMeConfig.companyName}
+            </p>
+          )}
+          {whyChooseMeConfig.companyDates && (
+            <p className="text-sm mt-1" style={{ color: 'var(--text-secondary)' }}>
+              {whyChooseMeConfig.companyDates}
+            </p>
+          )}
         </div>
 
         {/* Three Cards Row */}

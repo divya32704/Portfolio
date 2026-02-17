@@ -2,7 +2,7 @@ import { useEffect, useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { heroConfig } from '../config';
-import { ArrowRight, FileText } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -217,13 +217,7 @@ export function Hero() {
               {heroConfig.ctaPrimary}
               <ArrowRight className="w-4 h-4" />
             </a>
-            <a
-              href="#"
-              className="btn-outline inline-flex items-center gap-2 text-sm"
-            >
-              <FileText className="w-4 h-4" />
-              {heroConfig.ctaSecondary}
-            </a>
+            {/* Secondary CTA removed per request */}
           </div>
         </div>
       </div>
