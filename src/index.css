@@ -150,6 +150,27 @@
     border-color: rgba(183, 255, 58, 0.3);
     transform: translateY(-4px);
   }
+
+  /* Ensure no decorative arrows or pseudo-elements are shown on tech cards
+     (some utility/icon rules may inject ::before/::after elsewhere) */
+  .tech-card::before,
+  .tech-card::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Also hide any inline icon SVGs or elements that might be injected into
+     tech cards (covers JS-inserted icons like ArrowRight, Chevron, etc.) */
+  .tech-card svg,
+  .tech-card .icon,
+  .tech-card [class*="arrow"],
+  .tech-card [class*="chev"],
+  .tech-card [class*="chevron"] {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    visibility: hidden !important;
+  }
   
   /* Gradient text */
   .gradient-text {
