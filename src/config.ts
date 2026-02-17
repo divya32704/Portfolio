@@ -233,7 +233,6 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       description: "AI-powered voice-controlled assistant for visually impaired users. Captures real-time webcam input and generates scene descriptions using vision-language models with multilingual support.",
       tags: ["Flask", "React", "Whisper", "Qwen-VL", "OCR"],
       github: "https://github.com/divya32704/dristi-main",
-      demo: "#",
     },
     {
       id: 2,
@@ -244,7 +243,6 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       description: "AI-driven biomechanics analysis platform. Analyzes athlete warm-up videos using pose estimation to detect injury risk patterns and movement inefficiencies.",
       tags: ["MediaPipe", "Python", "React", "Biomechanics"],
       github: "https://github.com/divya32704/Athlyze",
-      demo: "#",
     },
     {
       id: 3,
@@ -254,7 +252,6 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       image: "/project-poison.jpg",
       description: "Security-focused research on adversarial ML vulnerabilities. Evaluated model robustness under various poisoning strategies and analyzed defensive approaches.",
       tags: ["Adversarial ML", "Security", "Research"],
-      github: "#",
     },
     {
       id: 4,
@@ -265,7 +262,6 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       description: "Full-stack web platform promoting environmental cleanup initiatives. Features event information, volunteer sign-ups, and educational resources.",
       tags: ["HTML", "CSS", "JavaScript", "Responsive"],
       github: "https://github.com/divya32704/EcoClean",
-      demo: "#",
     },
     {
       id: 5,
@@ -275,7 +271,6 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       image: "/project-transformer.jpg",
       description: "Research project optimizing large transformer models for deployment. Benchmarked quantization, pruning, and knowledge distillation across BERT, GPT, and Vision Transformers.",
       tags: ["Quantization", "Pruning", "Distillation"],
-      github: "#",
     },
     {
       id: 6,
@@ -286,7 +281,6 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       description: "Enterprise document retrieval system using Retrieval-Augmented Generation. Integrates FAISS vector indexing with Hugging Face models for semantic search.",
       tags: ["FAISS", "Hugging Face", "RAG", "Python"],
       github: "https://github.com/divya32704/dispatch-routing-demo",
-      demo: "#",
     },
   ],
 };
