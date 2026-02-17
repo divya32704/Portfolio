@@ -68,7 +68,7 @@ export const introGridConfig: IntroGridConfig = {
     { src: "/nexus-cup-1.jpg", alt: "Nexus Technology Cup - 3rd Place Winners with $5,000 check" },
     { src: "/nexus-cup-2.jpg", alt: "Team Dristi with judges at Nexus Technology Cup" },
     { src: "/nexus-cup-3.jpg", alt: "Receiving award at Nexus Technology Cup ceremony" },
-    { src: "/nexus-cup-4.jpg", alt: "Divya at DevDays event" },
+    { src: "/nexus-cup-4.JPEG", alt: "Divya at DevDays event" },
     { src: "/nexus-cup-5.jpg", alt: "Divya presenting Dristi project" },
   ],
   accentText: "Core Focus Areas - 2024-2026",
@@ -174,7 +174,7 @@ export const whyChooseMeConfig: WhyChooseMeConfig = {
   ],
   featureCards: [
     {
-      image: "/nexus-cup-1.jpg",
+      image: "/nexus-cup-4.JPEG",
       imageAlt: "Divya at Nexus Technology Cup",
       title: "Nexus Technology Cup",
       description: "3rd Place winner statewide among 70+ teams. Presented Dristi - an AI-powered accessibility system with real-world deployment focus.",
