@@ -155,7 +155,7 @@ export function Hero() {
         className="absolute inset-0 flex items-center justify-center z-[5] will-change-transform pointer-events-none"
       >
         <h1
-          className="text-[14vw] md:text-[12vw] lg:text-[10vw] font-extralight tracking-tighter leading-none select-none whitespace-nowrap"
+          className="text-[14vw] md:text-[12vw] lg:text-[10vw] font-light tracking-tighter leading-none select-none whitespace-nowrap"
           style={{ color: 'rgba(244, 247, 246, 0.08)' }}
         >
           {heroConfig.backgroundText}

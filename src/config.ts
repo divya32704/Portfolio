@@ -29,8 +29,8 @@ export const heroConfig: HeroConfig = {
   // Clear background text so large watermark behind the portrait is removed
   // Add name to appear behind the portrait in the hero section
   // Use non-breaking spaces so the gap between the two words is preserved
-    // Use fifteen non-breaking spaces for the requested gap
-    backgroundText: "Divya\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Shah",
+     // Use sixteen non-breaking spaces for the requested gap
+     backgroundText: "Divya\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0Shah",
   heroImage: "/hero-divya.jpg",
   heroImageAlt: "Divya Shah - Full Stack Software Developer",
   overlayText: "Building intelligent systems",

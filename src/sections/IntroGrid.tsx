@@ -27,7 +27,9 @@ export function IntroGrid() {
   const gridRef = useRef<HTMLDivElement>(null);
   const focusAreasRef = useRef<HTMLDivElement>(null);
 
-  if (!introGridConfig.titleLine1 && !introGridConfig.titleLine2 && introGridConfig.portfolioImages.length === 0) return null;
+  const hasContent = Boolean(
+    introGridConfig.titleLine1 || introGridConfig.titleLine2 || introGridConfig.portfolioImages.length > 0
+  );
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -153,6 +155,8 @@ export function IntroGrid() {
     return () => ctx.revert();
   }, []);
 
+  if (!hasContent) return null;
+
   const focusAreas = [
     "AI systems architecture",
     "Model optimization and deployment",
@@ -200,6 +204,12 @@ export function IntroGrid() {
                 </span>
               </div>
             </div>
+          </div>
+
+          <div className="mb-4">
+            <h2 className="text-lg md:text-xl font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
+              About me
+            </h2>
           </div>
 
           <p
