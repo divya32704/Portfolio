@@ -207,7 +207,7 @@ export function IntroGrid() {
           </div>
 
           <div className="mb-4">
-            <h2 className="text-lg md:text-xl font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-2 -mt-20 md:-mt-24 lg:-mt-28 text-[var(--neon-lime)]">
               About me
             </h2>
           </div>
