@@ -376,13 +376,23 @@ export const faqConfig: FAQConfig = {
     },
     {
       id: "2",
-      title: "2nd Place - DevDays Hackathon",
-      description: "Recognized for innovative project development and technical execution in a competitive hackathon environment.",
+      title: "2nd Place - ULM Hackathon",
+      description: "Recognized for innovative project development and technical execution at the ULM Hackathon, earning a 2nd place finish.",
     },
     {
       id: "3",
       title: "Secretary - Girls Who Code",
       description: "Leadership role promoting diversity in technology and organizing coding workshops and events for underrepresented groups in STEM.",
+    },
+    {
+      id: "4",
+      title: "Acting Treasurer - Nepalese Student Association",
+      description: "Managed financial records and supported budgeting for student-led cultural events and initiatives.",
+    },
+    {
+      id: "5",
+      title: "Ambassador - Student Leadership Advisory Council",
+      description: "Represented student interests and collaborated with university leadership on campus initiatives and policy discussions.",
     },
   ],
 };
