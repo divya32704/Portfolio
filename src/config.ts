@@ -232,7 +232,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       image: "/project-dristi.png",
       description: "AI-powered voice-controlled assistant for visually impaired users. Captures real-time webcam input and generates scene descriptions using vision-language models with multilingual support.",
       tags: ["Flask", "React", "Whisper", "Qwen-VL", "OCR"],
-      github: "#",
+      github: "https://github.com/divya32704/dristi-main",
       demo: "#",
     },
     {
@@ -243,7 +243,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       image: "/project-athlyze.png",
       description: "AI-driven biomechanics analysis platform. Analyzes athlete warm-up videos using pose estimation to detect injury risk patterns and movement inefficiencies.",
       tags: ["MediaPipe", "Python", "React", "Biomechanics"],
-      github: "#",
+      github: "https://github.com/divya32704/Athlyze",
       demo: "#",
     },
     {
@@ -264,7 +264,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       image: "/project-ecoclean.png",
       description: "Full-stack web platform promoting environmental cleanup initiatives. Features event information, volunteer sign-ups, and educational resources.",
       tags: ["HTML", "CSS", "JavaScript", "Responsive"],
-      github: "#",
+      github: "https://github.com/divya32704/EcoClean",
       demo: "#",
     },
     {
@@ -285,7 +285,7 @@ export const featuredProjectsConfig: FeaturedProjectsConfig = {
       image: "/project-rag.jpg",
       description: "Enterprise document retrieval system using Retrieval-Augmented Generation. Integrates FAISS vector indexing with Hugging Face models for semantic search.",
       tags: ["FAISS", "Hugging Face", "RAG", "Python"],
-      github: "#",
+      github: "https://github.com/divya32704/dispatch-routing-demo",
       demo: "#",
     },
   ],

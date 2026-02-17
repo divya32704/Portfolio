@@ -11,7 +11,7 @@ export function FeaturedProjects() {
   const headerRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
 
-  if (!featuredProjectsConfig.titleRegular && featuredProjectsConfig.projects.length === 0) return null;
+  // render check will be handled in JSX so hooks run unconditionally
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -122,6 +122,8 @@ export function FeaturedProjects() {
     return () => ctx.revert();
   }, []);
 
+  if (!featuredProjectsConfig.titleRegular && featuredProjectsConfig.projects.length === 0) return null;
+
   return (
     <section
       ref={sectionRef}
@@ -155,6 +157,8 @@ export function FeaturedProjects() {
           {featuredProjectsConfig.viewAllText && (
             <a
               href={featuredProjectsConfig.viewAllHref || '#contact'}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 md:mt-0 inline-flex items-center gap-2 text-sm transition-colors duration-300 group"
               style={{ color: 'var(--text-secondary)' }}
             >
@@ -243,6 +247,8 @@ export function FeaturedProjects() {
                   {project.github && (
                     <a
                       href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm transition-colors duration-300 hover:text-[var(--neon-lime)]"
                       style={{ color: 'var(--text-secondary)' }}
                     >
@@ -253,6 +259,8 @@ export function FeaturedProjects() {
                   {project.demo && (
                     <a
                       href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 text-sm transition-colors duration-300 hover:text-[var(--neon-lime)]"
                       style={{ color: 'var(--text-secondary)' }}
                     >
